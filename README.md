@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# E-commerce Product Listing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objective
+This project demonstrates the creation of a simple e-commerce product listing page using the MERN stack (MongoDB, Express, React, Node.js). It showcases the candidate's ability to work with both frontend and backend technologies, as well as an understanding of basic e-commerce concepts.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+### Prerequisites
+- *Node.js* (v14.x or later)
+- *MongoDB* (Use MongoDB Atlas or local MongoDB installation)
+- *Git* (for cloning the repository)
 
-### `npm start`
+### Running the Application Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. *Clone the repository: git clone https://github.com/your-username/product-api.git:*
+2. *Install dependencies: npm install*
+3. *Create a .env file in the root directory and add your MongoDB URL: MONGODB_URL=mongodb://localhost:27017/product-api*
+4. Start the server: node server.js
+5. To add products to the database, run seed.js file by using node seed.js
+6. For displaying the frontend of the website, go to root directory and type npm start.
+7. Open a web browser and navigate to http://localhost:5000/api/products to see the list of products
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Code Structure
+*The code is organized into the following folders:*
+1. Models - Contains schema of products in product.js file.
+2. Server- Comprises of backend of the webpage
+3. Public - Contains images and logos to be used in webpage
+4. Src - Src folder consists of main files for the web application to run like app.js, index.js
+   
+## Challenges Faced
+1. I faced an unusual errror: unexpected token??= so I check with the node_module files, then I came to know I am not using the latest node version which cant handle ??= operator used in node_modules.
+2. Connecting with database was giving bad authentication error, so I verified connection string only to know that I havent removed "<>" from my password causing this error.
+3. While seeding products in database, I noticed that it was creating duplicate entries for all products, so i used deletemany() function to clear all of the previous data and not Include any duplicate entries.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Further Improvememts
+1. Implement authentication and authorization to secure the API.
+2. Add more routes for creating, updating, and deleting products.
+3. Add shopping cart functionality
+4. Use a more robust error handling mechanism, such as logging errors to a file or sending error notifications.
+5. Deploy the application to a cloud platform, such as Heroku or AWS, for scalability and reliability.
